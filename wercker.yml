@@ -13,4 +13,4 @@ build:
         cwd: $WERCKER_SOURCE_DIR/.build
         code: |
           mv ergodox_ez_$TARGET_KEYMAP.hex $WERCKER_OUTPUT_DIR/ergodox.hex
-          cp ergodox_ez_$TARGET_KEYMAP.hex $WERCKER_REPORT_ARTIFACTS_DIR/ergodox.hex
+          cp $WERCKER_OUTPUT_DIR/ergodox.hex $WERCKER_REPORT_ARTIFACTS_DIR/ergodox.hex
