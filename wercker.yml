@@ -13,13 +13,4 @@ build:
         cwd: $WERCKER_SOURCE_DIR/.build
         code: |
           mv ergodox_ez_$TARGET_KEYMAP.hex $WERCKER_OUTPUT_DIR/ergodox.hex
-deploy:
-  steps:
-    - script:
-        name: put built hex file to bintray.
-        code: |
-          curl -T $WERCKER_SOURCE_DIR/ergodox.hex -u$BINTRAY_USERNAME:$BINTRAY_APIKEY https://api.bintray.com/content/$BINTRAY_USERNAME/generic/ergodox.hex/$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT/ergodox.hex
-    - script:
-        name: publish uploaded hex file.
-        code: |
-          curl -X POST -u$BINTRAY_USERNAME:$BINTRAY_APIKEY https://api.bintray.com/content/$BINTRAY_USERNAME/generic/ergodox.hex/$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT/publish
+          cp ergodox_ez_$TARGET_KEYMAP.hex $WERCKER_REPORT_ARTIFACTS_DIR/ergodox.hex
