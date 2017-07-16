@@ -186,18 +186,14 @@ void matrix_scan_user(void) {
 
 };
 
-
-void type_code(uint8_t keycode){
-  register_code (keycode);
-  unregister_code (keycode);
-};
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CONVERSION:
         if (record->event.pressed) {
-            type_code(KC_GRV);
-            type_code(KC_TILD);
+            register_code (KC_GRV);
+            register_code (KC_LALT);
+            unregister_code (KC_LALT);
+            unregister_code (KC_GRV);
         }
         return false;
     }
