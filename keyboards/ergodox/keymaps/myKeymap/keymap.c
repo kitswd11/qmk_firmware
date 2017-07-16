@@ -190,10 +190,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CONVERSION:
         if (record->event.pressed) {
-            register_code (KC_GRV);
             register_code (KC_LALT);
-            unregister_code (KC_LALT);
+            register_code (KC_GRV);
             unregister_code (KC_GRV);
+            unregister_code (KC_LALT);
         }
         return false;
     }
