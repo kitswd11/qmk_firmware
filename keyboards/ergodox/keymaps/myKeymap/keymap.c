@@ -19,11 +19,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |   =    |   Q  |   W  |   E  |   R  |   T  |  (   |           |  )   |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |  Ctrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  | Minus  |
+ * |  Ctrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |    -   |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |  Shift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | HENKAN |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |  L1  | LGUI | Alt  | Del  |  L1  |                                       |  L2  |   *  | Ctrl | Shift|  L1  |
+ *   |  L1  | LGUI | Alt  | Del  |  L1  |                                       |  L2  |   '  | Ctrl | Shift|  L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | Del  | HOME |       | PgUp | Backsp |
@@ -37,19 +37,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_GRV,        KC_1,         KC_2,    KC_3,   KC_4,    KC_5,   TG(SYMB),
+        KC_GRV,         KC_1,         KC_2,    KC_3,   KC_4,    KC_5,   TG(SYMB),
         KC_EQL,         KC_Q,         KC_W,    KC_E,   KC_R,    KC_T,   KC_LPRN,
         KC_LCTRL,       KC_A,         KC_S,    KC_D,   KC_F,    KC_G,
-        KC_LEFT,        KC_Z,         KC_X,    KC_C,   KC_V,    KC_B,   KC_LBRC,
+        KC_LSFT,        KC_Z,         KC_X,    KC_C,   KC_V,    KC_B,   KC_LBRC,
         MO(SYMB),       KC_LGUI,      KC_LALT, KC_DELT,MO(SYMB),
-                                                     KC_LSFT, KC_HOME,
+                                                     KC_DELT, KC_HOME,
                                                               KC_END,
                                         SFT_T(KC_SPC),KC_BSPC,KC_LCTRL,
         // right hand
              TG(MDIA),    KC_6,   KC_7,    KC_8,   KC_9,    KC_0,            KC_ESC,
              KC_RPRN,     KC_Y,   KC_U,    KC_I,   KC_O,    KC_P,            KC_BSLS,
                           KC_H,   KC_J,    KC_K,   KC_L,    KC_SCLN,         KC_MINS,
-             KC_RBRC,     KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         CONVERSION,
+             KC_RBRC,     KC_N,   KC_M,    KC_QUOT,KC_DOT,  KC_SLSH,         CONVERSION,
                                   MO(MDIA),KC_ASTR,KC_RCTRL,KC_RSFT,         MO(SYMB),
              KC_PGUP,     KC_BSPC,
              KC_PGDN,
