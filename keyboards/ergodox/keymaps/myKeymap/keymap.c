@@ -173,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_TRNS,KC_TRNS,KC_TRNS,
        // right hand
        KC_TRNS, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,  KC_F12,
-       KC_TRNS, KC_NO,   CTL(KC_Z),TG(BASE),KC_NO,   KC_NO,  KC_F12,
+       KC_TRNS, KC_NO,   KC_CTRL|KC_Z,TG(BASE),KC_NO,   KC_NO,  KC_F12,
                 KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT,   KC_NO,  KC_TRNS,
        KC_TRNS, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,  KC_TRNS,
                          KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
