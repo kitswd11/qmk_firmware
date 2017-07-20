@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
  *                                 |Enter |Backsp|------|       |------|  Tab   |Space |
- *                                 |      |ace   | LAlt |       |Hen/M |  Alt   |Shift |
+ *                                 |      |ace   | LAlt |       |Hen   |  Alt   |Shift |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -48,13 +48,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              KC_ENT,KC_BSPC,  KC_LALT,
         // right hand
         KC_NO,    KC_6,   KC_7,    KC_8,   KC_9,    KC_0,            KC_GRV,
-        KC_NO,    KC_Y,   KC_U,    KC_I,   KC_O,    KC_P,            KC_EQL,
+        TG(MDIA),    KC_Y,   KC_U,    KC_I,   KC_O,    KC_P,            KC_EQL,
                   KC_H,   KC_J,    KC_K,   KC_L,    KC_SCLN,         KC_MINS,
-        KC_NO,    KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         KC_BSLS,
-                        LT(VIM, TG(VIM)), KC_LCTRL,KC_RALT,KC_RSFT,   KC_ESC,
+        MO(MDIA),    KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         KC_BSLS,
+                        MO(VIM), KC_LCTRL,KC_RALT,KC_RSFT,  TG(VIM),
         KC_NO,     KC_NO,
-        KC_NO ,
-        LT(MDIA,M_CONVERSION),     MT(KC_RALT, KC_TAB), MT(KC_RSFT, KC_SPC)
+        KC_NO,
+        M_CONVERSION,     MT(KC_RALT, KC_TAB), SFT_T(KC_SPC)
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -165,15 +165,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // left hand
        KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
        KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
-       KC_TRNS, TG(BASE),KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+       KC_TRNS, TO(BASE, 1),KC_HOME, KC_PGDN, KC_PGUP, KC_END,
        KC_TRNS, KC_NO,   KC_BSPC, KC_NO,   KC_NO,   KC_NO, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                        KC_TRNS,KC_TRNS,
-                                               KC_DELT,
-                               KC_TRNS,KC_TRNS,KC_TRNS,
+                                               KC_TRNS,
+                               KC_TRNS,KC_DELT,KC_TRNS,
        // right hand
        KC_TRNS, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,  KC_F12,
-       KC_TRNS, KC_NO,   KC_LCTRL|KC_Z,TG(BASE),KC_NO,   KC_NO,  KC_F12,
+       KC_TRNS, KC_NO,   LCTL(KC_Z),TO(BASE,1),KC_NO,   KC_NO,  KC_F12,
                 KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT,   KC_NO,  KC_TRNS,
        KC_TRNS, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,  KC_TRNS,
                          KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
