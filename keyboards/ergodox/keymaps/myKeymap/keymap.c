@@ -7,7 +7,6 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keysx
 #define VIM 3
-#define TOG 4
 
 enum my_keycodes {
   M_CONVERSION = SAFE_RANGE,
@@ -42,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,         KC_1,         KC_2,    KC_3,   KC_4,    KC_5,   KC_NO,
         KC_TAB,         KC_Q,         KC_W,    KC_E,   KC_R,    KC_T,   KC_NO,
         KC_LCTRL,       KC_A,         KC_S,    KC_D,   KC_F,    KC_G,
-        KC_LSFT,        KC_Z,         KC_X,    KC_C,   KC_V,    KC_B,   MO(TOG),
+        KC_LSFT,        KC_Z,         KC_X,    KC_C,   KC_V,    KC_B,   KC_NO,
         KC_LGUI,        KC_LALT,      KC_NO,   KC_NO,  MO(SYMB),
                                                      KC_DELT, KC_NO,
                                                               KC_NO,
@@ -51,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,    KC_6,   KC_7,    KC_8,   KC_9,    KC_0,            KC_GRV,
         KC_NO,    KC_Y,   KC_U,    KC_I,   KC_O,    KC_P,            KC_EQL,
                   KC_H,   KC_J,    KC_K,   KC_L,    KC_SCLN,         KC_MINS,
-        TO(BASE), KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         KC_BSLS,
+        LT(MEDIA), KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         KC_BSLS,
                         LT(VIM, TG(VIM)), KC_RCTL,KC_RALT,KC_RSFT,   KC_ESC,
         KC_NO,     KC_NO,
         KC_NO ,
-        LT(MEDIA,CONVERSION),     MC(KC_RALT, KC_TAB), MC(KC_RSFT, KC_SPC)
+        CONVERSION,     MC(KC_RALT, KC_TAB), MC(KC_RSFT, KC_SPC)
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -240,11 +239,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             unregister_code (KC_LALT);
         }
         return false;
-        
-        case M_GOTO :
-        case M_CAW :
-        case M_IMode :
-        case M_Esc :
     }
     return true;
 }
