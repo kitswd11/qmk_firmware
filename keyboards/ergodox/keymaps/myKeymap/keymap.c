@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         LT(VIM, TG(VIM)), KC_RCTL,KC_RALT,KC_RSFT,   KC_ESC,
         KC_NO,     KC_NO,
         KC_NO ,
-        LT(MDIA,CONVERSION),     MC(KC_RALT, KC_TAB), MC(KC_RSFT, KC_SPC)
+        LT(MDIA,M_CONVERSION),     MC(KC_RALT, KC_TAB), MC(KC_RSFT, KC_SPC)
     ),
 /* Keymap 1: Symbol Layer
  *
