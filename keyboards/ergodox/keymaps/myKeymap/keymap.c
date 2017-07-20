@@ -50,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,    KC_6,   KC_7,    KC_8,   KC_9,    KC_0,            KC_GRV,
         KC_NO,    KC_Y,   KC_U,    KC_I,   KC_O,    KC_P,            KC_EQL,
                   KC_H,   KC_J,    KC_K,   KC_L,    KC_SCLN,         KC_MINS,
-        LT(MDIA), KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         KC_BSLS,
+        KC_NO,    KC_N,   KC_M,    KC_COMM,KC_DOT,  KC_SLSH,         KC_BSLS,
                         LT(VIM, TG(VIM)), KC_RCTL,KC_RALT,KC_RSFT,   KC_ESC,
         KC_NO,     KC_NO,
         KC_NO ,
-        CONVERSION,     MC(KC_RALT, KC_TAB), MC(KC_RSFT, KC_SPC)
+        LT(MDIA,CONVERSION),     MC(KC_RALT, KC_TAB), MC(KC_RSFT, KC_SPC)
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -231,7 +231,7 @@ void matrix_scan_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case CONVERSION:
+        case M_CONVERSION:
         if (record->event.pressed) {
             register_code (KC_LALT);
             register_code (KC_GRV);
